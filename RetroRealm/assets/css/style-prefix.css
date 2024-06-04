@@ -140,7 +140,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 80%); }
 
 .title {
-  color: var(--eerie-black);
+  color: var(--s);
   font-size: var(--fs-5);
   font-weight: var(--weight-600);
   letter-spacing: 0.4px;
@@ -901,7 +901,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .sidebar .showcase-content { width: -webkit-calc(100% - 90px); width: calc(100% - 90px); }
 
 .sidebar .showcase-title {
-  color: var(--onyx);
+  color: var(--sandy-brown);
   font-size: var(--fs-7);
   font-weight: var(--weight-400);
   text-transform: capitalize;
@@ -1074,7 +1074,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
           scroll-snap-type: inline mandatory;
 }
 
-.product-featured .showcase-container {
+.product-featured {
   min-width: 100%;
   padding: 30px;
   border: 1px solid var(--cultured);
@@ -1082,6 +1082,26 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
           border-radius: var(--border-radius-md);
   scroll-snap-align: start;
 }
+
+.showcase-container {
+  min-width: 100%;
+  padding: 30px;
+  border: 1px solid var(--cultured);
+  -webkit-border-radius: var(--border-radius-md);
+          border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+  
+}
+.showcase-container-img-principal {
+  min-width: 100%;
+  padding: 30px;
+  border: 1px solid var(--cultured);
+  -webkit-border-radius: var(--border-radius-md);
+          border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+  background: white;
+}
+
 
 .product-featured .showcase-img {
   width: 100%;
@@ -1146,7 +1166,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .product-featured .add-cart-btn {
-  background: var(--salmon-pink);
+  background: var(--sandy-brown);
   padding: 8px 15px;
   color: var(--white);
   font-weight: var(--fs-9);
@@ -1418,7 +1438,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .product-grid del { color: var(--sonic-silver); }
 
 
-
+.title1{color:var(--sandy-brown)}
 
 
 /*-----------------------------------*\
