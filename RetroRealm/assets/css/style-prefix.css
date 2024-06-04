@@ -571,7 +571,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   #BANNER
 \*-----------------------------------*/
 
-.banner { margin: 30px 0; }
+.banner { margin: 30px 0;  }
 
 .slider-container {
   display: -webkit-box;
@@ -601,6 +601,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
           border-radius: var(--border-radius-md);
   overflow: hidden;
   scroll-snap-align: start;
+
 }
 
 .slider-item .banner-img {
@@ -610,6 +611,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
+ 
 }
 
 .banner-content {
@@ -968,6 +970,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   min-width: 100%;
   padding: 0 5px;
   scroll-snap-align: start;
+ 
   
 }
 
@@ -1051,9 +1054,10 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   #PRODUCT FEATURED
 \*-----------------------------------*/
 
-.product-featured { margin-bottom: 30px; }
+.product-featured { margin-bottom: 30px;}
 
 .product-featured .showcase-wrapper {
+ 
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1084,6 +1088,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  
 }
 
 .product-featured .showcase-content { margin-top: 30px; }
@@ -1252,12 +1257,12 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   display: -ms-grid;
   display: grid;
  
-  gap: 25px;
+  gap: 15px;
 }
 
 .product-grid .showcase {
   border: 1px solid var(--cultured);
-  background: white;
+  background: transparent;
   height: 400px;
   width: 300px;
   -webkit-border-radius: var(--border-radius-md);
@@ -1367,7 +1372,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .product-grid .showcase-content { padding: 15px 20px 0; }
 
 .product-grid .showcase-category {
-  color: var(--salmon-pink);
+  color: var(--white);
   font-size: var(--fs-9);
   font-weight: var(--weight-500);
   text-transform: uppercase;
@@ -1375,7 +1380,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .product-grid .showcase-title {
-  color: var(--sonic-silver);
+  color: var(--sandy-brownr);
   font-size: var(--fs-8);
   font-weight: var(--weight-300);
   text-transform: capitalize;
@@ -1472,13 +1477,19 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 \*-----------------------------------*/
 
 .cta-container {
-  position: relative;
+  gap:20px;
+  display: flex;
  
 }
 
 .cta-banner {
   width: 100%;
-  height: 100%;
+  height: 250px;
+
+}
+.cta-banner-2 {
+  width: 100%;
+  height: 250px;
 
 }
 
@@ -1917,21 +1928,7 @@ footer {
 
 
 
-  /**
-   * #CTA
-   */
-
-  .cta-container { aspect-ratio: 6 / 5; }
-
-
-
-  /**
-   * #BLOG
-   */
-
-  .blog-container { gap: 30px; }
-
-  .blog-card { min-width: -webkit-calc(50% - 15px); min-width: calc(50% - 15px); }
+ 
 
 }
 
@@ -2509,13 +2506,14 @@ footer {
 }
 
 #RegForm input {
-  width: 90%;
+  width: 95%;
   padding: 10px;
   margin-top:10px;
   margin-bottom:10px;
   margin-left: 20x ;
   border: 1px solid #ccc;
   border-radius: 5px;
+  position: relative;
 }
 
 #LoginForm .btn{
@@ -2528,10 +2526,11 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    position: relative;
 }
 
 #RegForm .btn {
-  width: 90%;
+  width: 95%;
   padding: 10px;
   border: none;
   background: var(--sandy-brown);
@@ -2539,6 +2538,7 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
+  position: relative;
 }
 
 #LoginForm .btn:hover, #RegForm .btn:hover {
@@ -2550,9 +2550,6 @@ footer {
     text-decoration: none;
     font-size: 14px;
 }
-
-
- 
 
 
   /**
