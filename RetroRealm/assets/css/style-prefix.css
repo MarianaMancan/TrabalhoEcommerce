@@ -1196,6 +1196,11 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 
 .product-featured .showcase-status { margin-bottom: 15px; }
 
+.showcase-img-box{
+  width: 200px;
+  height: 250px;
+}
+
 .product-featured .showcase-status .wrapper {
   display: -webkit-box;
   display: -webkit-flex;
