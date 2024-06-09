@@ -1503,14 +1503,12 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .showcase-actions-1{
   display: flex;
   align-items: center;
-  color: white;
+  margin-top:60px;
+  stroke: white;
+  height: 20px;
+  width: 20px;
 }
 
-.btn-actions-1{
-  display: flex;
-  align-items: center;
-
-}
 
 
 
