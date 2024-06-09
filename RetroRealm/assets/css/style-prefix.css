@@ -1499,11 +1499,27 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   transition: var(--transition-timing);
 }
 
+
+.showcase-actions-1{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.btn-actions-1{
+  display: flex;
+  align-items: center;
+
+}
+
+
+
 .product-grid .btn-action:hover {
   background: var(--eerie-black);
   color: var(--white);
   border-color: var(--eerie-black);
 }
+
 
 .product-grid .showcase-content { padding: 15px 20px 0; }
 
