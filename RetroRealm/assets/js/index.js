@@ -15,11 +15,26 @@ function saveCartToLocalStorage() {
 
 function addProductToCart(event) {
   const button = event.target.closest('button');
-  const productInfos = button.parentElement.parentElement;
-  const productImage = productInfos.getElementsByClassName("showcase-img")[0].src;
-  const productName = productInfos.getElementsByClassName("showcase-title")[0].innerText;
-  const productPrice = productInfos.getElementsByClassName("price")[0].innerText;
+  if (!button) {
+    console.error("Erro: Botão não encontrado");
+    return;
+  }
 
+  const productInfos = button.parentElement.parentElement;
+
+  // Verifica se showcase-img existe, senão usa product-img default
+  const productImageElement = productInfos.getElementsByClassName("showcase-img")[0] || productInfos.getElementsByClassName("product-img default")[0];
+  const productImage = productImageElement ? productImageElement.src : '';
+
+  const productNameElement = productInfos.getElementsByClassName("showcase-title")[0];
+  const productName = productNameElement ? productNameElement.innerText : 'Nome não disponível';
+
+  const productPriceElement = productInfos.getElementsByClassName("price")[0];
+  const productPrice = productPriceElement ? productPriceElement.innerText : 'Preço não disponível';
+
+  console.log('Product Image:', productImage);
+  console.log('Product Name:', productName);
+  console.log('Product Price:', productPrice);
   const existingProduct = cart.products.find(product => product.name === productName);
   if (existingProduct) {
     existingProduct.quantity++;
@@ -48,10 +63,10 @@ function updateTotal() {
 }
 
 function ready() {
-  const addToCartButtons = document.getElementsByClass("btn-action");
-  console.log('btn-action buttons:', addToCartButtons);
-  for (let i = 0; i < addToCartButtons.length; i++) {
-    addToCartButtons[i].addEventListener("click", addProductToCart);
+  const addToCartButtons1 = document.getElementsByClassName("btn-action");
+  console.log('btn-action buttons:', addToCartButtons1);
+  for (let i = 0; i < addToCartButtons1.length; i++) {
+    addToCartButtons1[i].addEventListener("click", addProductToCart);
   }
 
   const addToCartButtons2 = document.getElementsByClassName("add-cart-btn");
