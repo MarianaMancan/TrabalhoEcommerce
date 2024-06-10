@@ -22,12 +22,7 @@ function addProductToCart(event) {
   }
 
   const showcaseBanner = button.closest('.showcase-banner');
-  if (!showcaseBanner) {
-    console.error("Erro: showcase-banner não encontrado");
-    return;
-  }
-
-  const productInfos = showcaseBanner.parentElement;
+  const productInfos = showcaseBanner ? showcaseBanner.parentElement : button.parentElement.parentElement;
 
   // Verifica se showcase-img existe, senão usa product-img default
   const productImageElement = productInfos.querySelector(".showcase-img") || productInfos.querySelector(".product-img.default");
