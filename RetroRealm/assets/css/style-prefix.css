@@ -485,11 +485,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   --ionicon-stroke-width: 90px;
 }
 
-.accordion-menu.active .add-icon,
-.accordion-menu .remove-icon { display: none; }
 
-.accordion-menu .add-icon,
-.accordion-menu.active .remove-icon { display: block; }
 
 .menu-category .submenu-category-list { margin-left: 10px; }
 
@@ -1228,8 +1224,14 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .cart-product td {
-  padding: 8px 0;
+  padding: 6px 0;
 }
+
+.cart-product tr {
+  display: flex;
+  align-items: center;
+}
+
 
 .product-identification {
   display: flex;
@@ -1238,7 +1240,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 
 .cart-product-image {
   width: 120px;
-  height: 70px;
+  height: 100%;
 }
 
 .cart-product-title {
@@ -1256,16 +1258,23 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   text-align: center;
   background: #eee;
 }
-
 .remove-product-button {
+  display: flex; /* Usar flexbox para alinhar itens */
+  align-items: center; /* Alinhar itens verticalmente no centro */
   margin-left: 12px;
-  background: #ff0000;
-  color: var(--white);
+  color: rgb(213, 13, 13);
   padding: 10px 8px;
-  border: 0;
+  border: 1px solid rgb(213, 13, 13);/* Borda com a mesma cor do texto */
   border-radius: 6px;
+ 
+  background-color: transparent;
+  cursor: pointer;
 
   transition: filter 0.2s;
+}
+
+.remove-product-button ion-icon {
+  margin-right: 6px; /* Espaçamento entre o ícone e o texto "Remover" */
 }
 
 .remove-product-button:hover {
@@ -1507,9 +1516,10 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   display: flex;
   align-items: center;
   gap: 10px; /* Adiciona espaçamento entre os elementos */
-  margin-top: 0px;
+ 
 
 }
+
 .coupon-section{  display: flex;
   align-items: center;
 margin: 20px;

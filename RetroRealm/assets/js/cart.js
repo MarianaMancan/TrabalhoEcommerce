@@ -34,7 +34,10 @@ function updateCartTable() {
     </td>
     <td class="product-actions">
      <input type="number" value="${product.quantity}" min="0" class="product-qtd-input" data-product-id="${product.id}">
-      <button type="button" class="remove-product-button">Remover</button>
+     <button type="button" class="remove-product-button">
+      <ion-icon name="trash-outline"></ion-icon>
+      <span>Remover</span>
+    </button>
     </td>
   `;
 
