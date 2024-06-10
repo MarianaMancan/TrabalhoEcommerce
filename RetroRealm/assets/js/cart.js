@@ -25,18 +25,18 @@ function updateCartTable() {
     newCartProduct.classList.add("cart-product");
 
     newCartProduct.innerHTML = `
-      <td class="product-identification">
-        <img src="${product.image}" alt="${product.name}" class="cart-product-image">
-        <strong class="cart-product-title">${product.name}</strong>
-      </td>
-      <td>
-        <span class="cart-product-price">${product.price}</span>
-      </td>
-      <td>
-        <input type="number" value="${product.quantity}" min="0" class="product-qtd-input">
-        <button type="button" class="remove-product-button">Remover</button>
-      </td>
-    `;
+    <td class="product-identification">
+      <img src="${product.image}" alt="${product.name}" class="cart-product-image">
+      <strong class="cart-product-title">${product.name}</strong>
+    </td>
+    <td>
+      <span class="cart-product-price">${product.price}</span>
+    </td>
+    <td class="product-actions">
+     <input type="number" value="${product.quantity}" min="0" class="product-qtd-input" data-product-id="${product.id}">
+      <button type="button" class="remove-product-button">Remover</button>
+    </td>
+  `;
 
     tableBody.append(newCartProduct);
 
@@ -67,11 +67,32 @@ function checkIfInputIsNull(event) {
 
 function updateTotal() {
   let total = 0;
+
   cart.products.forEach(product => {
-    total += parseFloat(product.price.replace("R$", "").replace(",", ".")) * product.quantity;
+    // Encontre o campo de entrada associado ao produto
+    let input = document.querySelector(`.product-qtd-input[data-product-id="${product.id}"]`);
+    
+    // Atualize a quantidade do produto com o valor do campo de entrada
+    product.quantity = parseInt(input.value);
+
+    // Converte o preço de string para número
+    let price = parseFloat(product.price.replace("R$", "").replace(",", "."));
+    
+    // Calcula o total para este produto e adiciona ao total geral
+    total += price * product.quantity;
   });
+
+  // Atualiza o total do carrinho com o valor calculado
   cart.totalAmount = total.toFixed(2).replace(".", ",");
+  
+  // Atualiza o texto do total no HTML
   document.querySelector(".cart-total-container span").innerText = "R$" + cart.totalAmount;
+  
+  console.log(cart.totalAmount);
 }
 
+// Adiciona evento de escuta a cada campo de entrada
+document.querySelectorAll('.product-qtd-input').forEach(input => {
+  input.addEventListener('input', updateTotal);
+});
 document.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);

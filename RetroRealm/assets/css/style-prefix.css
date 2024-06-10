@@ -1288,9 +1288,10 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   margin: 24px auto 0;
   background: var(--sandy-brown);
   color: var(--white);
+  height: 50px;
   border: 0;
   border-radius: 6px;
-  padding: 16px 20px;
+  padding: 14px 17px;
   text-transform: uppercase;
   font-size: 20px;
   font-weight: bold;
@@ -1300,7 +1301,26 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 
 .purchase-button:hover {
   filter: brightness(0.8);
+
 }
+
+.apply-coupon-btn:hover {
+  filter: brightness(0.8);
+}
+.apply-coupon-btn{display: flex;
+ 
+  background: var(--sandy-brown);
+  color: var(--white);
+  width: 200px;
+  height: 30px;
+  border: 0;
+ align-items: center;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+
+  transition: filter 0.2s;}
 
 
 .product-featured .showcase-status .wrapper {
@@ -1483,8 +1503,21 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   transition: var(--transition-timing);
   z-index: 3;
 }
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adiciona espaçamento entre os elementos */
+  margin-top: 0px;
 
+}
+.coupon-section{  display: flex;
+  align-items: center;
+margin: 20px;
+gap:20px;}
 
+.coupon-input{
+  width: 600px;
+  height: 30px;}
 
 .product-grid .showcase:hover .showcase-actions { -webkit-transform: translateX(0); -ms-transform: translateX(0); transform: translateX(0); }
 
