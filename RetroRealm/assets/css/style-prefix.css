@@ -413,6 +413,15 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .header-user-actions,
 .desktop-navigation-menu { display: none; }
 
+.header-user-actions{ 
+  position: absolute;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+ right: 40px;
+}
+
+
 .header-main {
   padding: 20px 0;
   border-bottom: 1px solid var(--cultured);
@@ -2521,6 +2530,7 @@ footer {
         -ms-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
+    position: relative;
     visibility: visible;
     pointer-events: all;
   }
