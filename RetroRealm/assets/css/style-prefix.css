@@ -2321,6 +2321,7 @@ footer {
   }
 
   .header-user-actions {
+    
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2623,7 +2624,8 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
+    gap:10px;
 }
 
 .col-2 {
@@ -2634,9 +2636,9 @@ footer {
 
 .form-container {
     background: #f7f7f7;
-    width: 670px;
+    width: 660px;
     height: 395px;
-    position: relative;
+ 
     text-align: center;
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -2644,11 +2646,30 @@ footer {
     overflow: hidden;
 }
 
-.form-btn {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
+
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+ width: 100%;
 }
+
+.input-container ion-icon {
+  position: absolute;
+  left: 590px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .bannerlogin {
   display: flex;
   justify-content: center;
@@ -2675,28 +2696,28 @@ footer {
 
 
 #LoginForm input {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin-bottom:10px;
     margin-top: 10px;
-    margin-left: 20x ;
+   
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 #RegForm input {
-  width: 95%;
+  width: 100%;
   padding: 10px;
   margin-top:10px;
   margin-bottom:10px;
-  margin-left: 20x ;
+
   border: 1px solid #ccc;
   border-radius: 5px;
-  position: relative;
+
 }
 
 #LoginForm .btn{
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin-top:20px;
     border: none;
@@ -2708,8 +2729,16 @@ footer {
     position: relative;
 }
 
+#LoginForm .btn ion-icon {
+  position: absolute;
+  left: 590px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
 #RegForm .btn {
-  width: 95%;
+  width: 100%;
   padding: 10px;
   border: none;
   background: var(--sandy-brown);
