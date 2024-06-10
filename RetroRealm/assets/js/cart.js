@@ -3,6 +3,14 @@ var cart = {
   products: []
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+  loadCartFromLocalStorage();
+  
+  // Gerador de cupom
+  document.getElementById('generate-coupon-button').addEventListener('click', generateCoupon);
+  document.querySelector('.apply-coupon-btn').addEventListener('click', applyCoupon);
+});
+
 function saveCartToLocalStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -49,7 +57,7 @@ function updateCartTable() {
 }
 
 function removeProduct(event) {
-  const button = event.target;
+  const button = event.currentTarget;
   const productRow = button.parentElement.parentElement;
   const productName = productRow.getElementsByClassName("cart-product-title")[0].innerText;
 
@@ -72,30 +80,47 @@ function updateTotal() {
   let total = 0;
 
   cart.products.forEach(product => {
-    // Encontre o campo de entrada associado ao produto
     let input = document.querySelector(`.product-qtd-input[data-product-id="${product.id}"]`);
-    
-    // Atualize a quantidade do produto com o valor do campo de entrada
     product.quantity = parseInt(input.value);
-
-    // Converte o preço de string para número
     let price = parseFloat(product.price.replace("R$", "").replace(",", "."));
-    
-    // Calcula o total para este produto e adiciona ao total geral
     total += price * product.quantity;
   });
 
-  // Atualiza o total do carrinho com o valor calculado
   cart.totalAmount = total.toFixed(2).replace(".", ",");
-  
-  // Atualiza o texto do total no HTML
   document.querySelector(".cart-total-container span").innerText = "R$" + cart.totalAmount;
-  
+  saveCartToLocalStorage();
   console.log(cart.totalAmount);
+}
+
+// Gerador de Cupom
+function generateCoupon() {
+  const couponCode = generateCouponCode(10);
+  document.getElementById('coupon-code').innerText = `Seu cupom: ${couponCode}`;
+}
+
+function generateCouponCode(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters[randomIndex];
+  }
+  return result;
+}
+
+function applyCoupon() {
+  const inputCoupon = document.querySelector('.coupon-input').value;
+  const validCoupons = ['EXAMPLE123', 'DISCOUNT10'];
+
+  if (validCoupons.includes(inputCoupon)) {
+   alert('Cupom aplicado com sucesso! Desconto concedido.');
+    // Lógica para aplicar desconto ao carrinho
+  } else {
+    alert(document.getElementById('discount-message').innerText = 'Cupom inválido. Tente novamente.');
+  }
 }
 
 // Adiciona evento de escuta a cada campo de entrada
 document.querySelectorAll('.product-qtd-input').forEach(input => {
   input.addEventListener('input', updateTotal);
 });
-document.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);

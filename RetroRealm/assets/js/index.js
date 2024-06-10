@@ -78,5 +78,29 @@ function ready() {
   }
 }
 
+function iniciarContador() {
+  var tempoRestante = 60;
+  var contadorElemento = document.getElementById("contador");
+  var contadorElemento2 = document.getElementById("contador2");
+
+  var contador = setInterval(function() {
+      tempoRestante--;
+      var segundos = tempoRestante % 60;
+
+      if (segundos < 10) {
+          segundos = segundos;
+      }
+
+      contadorElemento.innerHTML = segundos;
+      contadorElemento2.innerHTML = segundos;
+
+      if (tempoRestante <= 20) {
+          tempoRestante = 59;
+      }
+  }, 1000);
+}
+
+
+window.onload = iniciarContador;
 // Configure the event listeners when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', ready);
