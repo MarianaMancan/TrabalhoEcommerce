@@ -14,22 +14,29 @@ function saveCartToLocalStorage() {
 }
 
 function addProductToCart(event) {
+
   const button = event.target.closest('button');
   if (!button) {
     console.error("Erro: Botão não encontrado");
     return;
   }
 
-  const productInfos = button.parentElement.parentElement;
+  const showcaseBanner = button.closest('.showcase-banner');
+  if (!showcaseBanner) {
+    console.error("Erro: showcase-banner não encontrado");
+    return;
+  }
+
+  const productInfos = showcaseBanner.parentElement;
 
   // Verifica se showcase-img existe, senão usa product-img default
-  const productImageElement = productInfos.getElementsByClassName("showcase-img")[0] || productInfos.getElementsByClassName("product-img default")[0];
+  const productImageElement = productInfos.querySelector(".showcase-img") || productInfos.querySelector(".product-img.default");
   const productImage = productImageElement ? productImageElement.src : '';
 
-  const productNameElement = productInfos.getElementsByClassName("showcase-title")[0];
+  const productNameElement = productInfos.querySelector(".showcase-title");
   const productName = productNameElement ? productNameElement.innerText : 'Nome não disponível';
 
-  const productPriceElement = productInfos.getElementsByClassName("price")[0];
+  const productPriceElement = productInfos.querySelector(".price");
   const productPrice = productPriceElement ? productPriceElement.innerText : 'Preço não disponível';
 
   console.log('Product Image:', productImage);
