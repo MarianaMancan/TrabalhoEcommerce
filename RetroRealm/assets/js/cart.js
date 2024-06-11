@@ -92,33 +92,6 @@ function updateTotal() {
   console.log(cart.totalAmount);
 }
 
-// Gerador de Cupom
-function generateCoupon() {
-  const couponCode = generateCouponCode(10);
-  document.getElementById('coupon-code').innerText = `Seu cupom: ${couponCode}`;
-}
-
-function generateCouponCode(length) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    result += characters[randomIndex];
-  }
-  return result;
-}
-
-function applyCoupon() {
-  const inputCoupon = document.querySelector('.coupon-input').value;
-  const validCoupons = ['EXAMPLE123', 'DISCOUNT10'];
-
-  if (validCoupons.includes(inputCoupon)) {
-   alert('Cupom aplicado com sucesso! Desconto concedido.');
-    // Lógica para aplicar desconto ao carrinho
-  } else {
-    alert(document.getElementById('discount-message').innerText = 'Cupom inválido. Tente novamente.');
-  }
-}
 
 // Adiciona evento de escuta a cada campo de entrada
 document.querySelectorAll('.product-qtd-input').forEach(input => {
